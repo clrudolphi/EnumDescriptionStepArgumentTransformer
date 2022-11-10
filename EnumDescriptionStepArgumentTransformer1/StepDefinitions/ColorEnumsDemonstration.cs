@@ -16,19 +16,24 @@ namespace EnumDescriptionStepArgumentTransformer1.StepDefinitions
         {
 
         }
-
-        [When("the two numbers are added")]
-        public void WhenTheTwoNumbersAreAdded()
+        private int sum;
+        [When("the two numbers are added (.*) (.*)")]
+        public void WhenTheTwoNumbersAreAdded(int a, int b)
         {
-   
+            sum = a + b;
         }
 
         [Then("the result should be (.*)")]
         public void ThenTheResultShouldBe(int result)
         {
-            //TODO: implement assert (verification) logic
-
-            throw new PendingStepException();
+            result.Should().Be(sum);
         }
+
+        [Given(@"a color as")]
+        public void GivenAColorAs(Colors c)
+        {
+            
+        }
+
     }
 }
