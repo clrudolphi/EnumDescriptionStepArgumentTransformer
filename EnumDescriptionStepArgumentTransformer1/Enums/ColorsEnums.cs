@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace EnumDescriptionStepArgumentTransformer1
 {
+  
     public enum Colors { 
         [Description("Magenta")] Red,
         White,
-        [Description("Navy")] Blue}
+        [Description("Navy")] Blue
+    }
 
 }
