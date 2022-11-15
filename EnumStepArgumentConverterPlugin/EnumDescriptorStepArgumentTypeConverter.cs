@@ -12,7 +12,7 @@ namespace EnumDescriptionStepArgumentTransformer1
     {
         private StepArgumentTypeConverter _baseConverter;
 
-        public EnumDescriptorStepArgumentTypeConverter(ITestTracer testTracer, IBindingRegistry bindingRegistry, IContextManager contextManager, IBindingInvoker bindingInvoker)
+        public EnumDescriptorStepArgumentTypeConverter(ITestTracer testTracer, IBindingRegistry bindingRegistry, IContextManager contextManager, IAsyncBindingInvoker bindingInvoker)
         {
             _baseConverter = new StepArgumentTypeConverter(testTracer, bindingRegistry, contextManager, bindingInvoker);
         }
@@ -30,7 +30,7 @@ namespace EnumDescriptionStepArgumentTransformer1
             return _baseConverter.CanConvert(value, typeToConvertTo, cultureInfo);
         }
 
-        public object Convert(object value, IBindingType typeToConvertTo, CultureInfo cultureInfo)
+        public async Task<object> ConvertAsync(object value, IBindingType typeToConvertTo, CultureInfo cultureInfo)
         {
             if (typeToConvertTo is RuntimeBindingType t && t.Type.IsEnum && value is string)
             {
@@ -51,7 +51,7 @@ namespace EnumDescriptionStepArgumentTransformer1
 
                 throw new ArgumentException($"{description} Not found.", nameof(value));
             }
-            return _baseConverter.Convert(value, typeToConvertTo, cultureInfo);
+            return await _baseConverter.ConvertAsync(value, typeToConvertTo, cultureInfo);
         }
     }
 }
