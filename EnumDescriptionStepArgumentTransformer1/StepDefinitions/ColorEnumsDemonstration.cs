@@ -1,5 +1,17 @@
 namespace EnumDescriptionStepArgumentTransformer1.StepDefinitions
 {
+
+    [Binding]
+    public class RegularEnumBindingSteps
+    {
+        [Given(@"a regular enum value of (.*)")]
+        public void GivenARegularEnumValueOfGreen(StandardEnum regularEnum)
+        {
+           
+        }
+
+    }
+
     [Binding]
     public sealed class ColorEnumsDemonstration
     {
