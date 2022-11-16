@@ -37,3 +37,6 @@ Scenario: Demonstrate that quote text input also works
 	"""
 	Magenta
 	"""
+
+Scenario: Demonstrate that plug-in can distinguish between multiple enum types that use Description attributes
+	Given the first color is Light Blue

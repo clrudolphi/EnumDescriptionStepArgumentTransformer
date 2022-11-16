@@ -14,4 +14,10 @@ namespace EnumDescriptionStepArgumentTransformer1
         [Description("Navy")] Blue
     }
 
+    public enum Pastels
+    {
+        Pink,
+        [Description("Light Blue")] BabyBlue
+    }
+
 }

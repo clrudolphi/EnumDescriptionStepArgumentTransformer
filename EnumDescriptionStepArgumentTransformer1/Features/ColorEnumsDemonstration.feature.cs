@@ -200,6 +200,28 @@ namespace EnumDescriptionStepArgumentTransformer1.Features
             }
             await this.ScenarioCleanupAsync();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Demonstrate that plug-in can distinguish between multiple enum types that use Des" +
+            "cription attributes")]
+        public async System.Threading.Tasks.Task DemonstrateThatPlug_InCanDistinguishBetweenMultipleEnumTypesThatUseDescriptionAttributes()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demonstrate that plug-in can distinguish between multiple enum types that use Des" +
+                    "cription attributes", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            this.ScenarioInitialize(scenarioInfo);
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+                await testRunner.GivenAsync("the first color is Light Blue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            }
+            await this.ScenarioCleanupAsync();
+        }
     }
 }
 #pragma warning restore

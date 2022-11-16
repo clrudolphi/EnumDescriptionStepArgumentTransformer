@@ -23,6 +23,13 @@ namespace EnumDescriptionStepArgumentTransformer1.StepDefinitions
     
         }
 
+        [Given("the first color is (.*)")]
+        public void GivenTheFirstNumberIs(Pastels first)
+        {
+
+        }
+
+
         [Given("the second color is (.*)")]
         public void GivenTheSecondNumberIs(Colors second)
         {

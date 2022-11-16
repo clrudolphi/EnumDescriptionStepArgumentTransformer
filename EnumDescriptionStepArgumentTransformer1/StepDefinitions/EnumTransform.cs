@@ -12,11 +12,11 @@ public sealed class EnumTransform
         _scenarioContext = scenarioContext;
     }
 
-    //[When(@"I choose {TestOptions} enum option - Default Transform")]
-    //public void WhenIChooseTestOptionsEnumOptionDefaultTransform(TestOptions option)
-    //{
-    //    Console.WriteLine(option);  // No assert needed
-    //}
+    [When(@"I choose {TestOptions} enum option - Default Transform")]
+    public void WhenIChooseTestOptionsEnumOptionDefaultTransform(TestOptions option)
+    {
+        Console.WriteLine(option);  // No assert needed
+    }
 
     [When(@"^I choose (.*) enum option - Default Transform Regex")]
     public void WhenIChooseEnumOptionDefaultTransformRegex(TestOptions option)
